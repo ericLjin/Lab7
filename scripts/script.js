@@ -3,7 +3,17 @@
 import { router } from './router.js'; // Router imported so you can use it to manipulate your SPA app here
 const setState = router.setState;
 
-// Make sure you register your service worker here too
+//register service worker
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/sw.js')
+    .then(function(registration) {
+      console.log('ServiceWorker registration successful: ', registration.scope);
+    }, function(err) {
+      console.log('ServiceWorker registration failed: ', err);
+    });
+  });
+}
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -39,5 +49,4 @@ document.addEventListener('DOMContentLoaded', () => {
     header.addEventListener('click', function() {
         setState({page: "Journal Entries"});
     });
-
 });

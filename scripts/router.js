@@ -17,10 +17,10 @@ router.setState = function(stateObj, post) {
     }
     else if(pageID === "Journal Entries")
     {
-        document.querySelector('body').className = ""; //remove class name
+        document.querySelector('body').className = ""; 
         header.textContent = "Journal Entries";
         document.querySelector('entry-page').remove(); //clear <entry-page> element
-        let newEntry = document.createElement('entry-page'); //create new entry elem
+        let newEntry = document.createElement('entry-page');
         document.querySelector('body').append(newEntry);
         window.history.pushState({page: "Journal Entries"}, "journalEntries", window.location.pathname + window.location.search);
     }
