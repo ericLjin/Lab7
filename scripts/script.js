@@ -6,7 +6,7 @@ const setState = router.setState;
 //register service worker
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', function() {
-    navigator.serviceWorker.register('./sw.js')
+    navigator.serviceWorker.register('../sw.js')
     .then(function(registration) {
       console.log('ServiceWorker registration successful: ', registration.scope);
     }, function(err) {
