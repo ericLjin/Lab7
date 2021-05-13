@@ -4,9 +4,6 @@
 const CACHE_NAME = 'lab7-cache';
 const urlsToCache = [
   '/',
-  '/style.css',
-  '/script/scripts.js',
-  '/script/router.js',
   '/index.html'
 ];
 
